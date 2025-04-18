@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  gap: 12px;
+}
+
+.input {
+  flex-grow: 1;
+  outline: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--violet);
+  color: var(--grey-light);
+  background-color: transparent;
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: var(--violet-light);
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: no-drop;
+}
