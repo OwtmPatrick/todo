@@ -7,7 +7,6 @@ import styles from './styles.module.css';
 function App() {
   const {current: currentTodos, finished: finishedTodos} = useSelector(todosSelector);
 
-  console.log('currentTodos:', currentTodos);
   return (
     <main className={styles.container}>
       <AddTodoForm />
