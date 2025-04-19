@@ -1,0 +1,13 @@
+.title {
+    margin-top: 0;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}

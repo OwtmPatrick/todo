@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import type {PayloadAction} from '@reduxjs/toolkit';
+import {generateId} from '../utils';
 import {Todo} from '../types';
 
 export interface TodosState {
@@ -8,8 +9,20 @@ export interface TodosState {
 }
 
 const initialState: TodosState = {
-  current: [],
-  finished: []
+  current: [
+    {
+      id: generateId(),
+      title: 'Learn React',
+      completed: false
+    }
+  ],
+  finished: [
+    {
+      id: generateId(),
+      title: 'Learn HTML and CSS',
+      completed: true
+    }
+  ]
 };
 
 export const todosSlice = createSlice({
@@ -17,7 +30,11 @@ export const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action: PayloadAction<Todo['title']>) => {
-      const newTodo = {title: action.payload, completed: false};
+      const newTodo = {
+        id: generateId(),
+        title: action.payload,
+        completed: false
+      };
 
       return {...state, current: [newTodo, ...state.current]};
     }

@@ -1,18 +1,18 @@
-// import reactLogo from './assets/react.svg';
-// import viteLogo from '/vite.svg';
 import {useSelector} from 'react-redux';
 import {AddTodoForm} from './components/AddTodoForm';
 import {todosSelector} from './store/selectors';
+import {TodosList} from './components/TodosList';
 import styles from './styles.module.css';
 
 function App() {
-  console.log(styles);
-  const {current: currentTodos, finished: finishedTodods} = useSelector(todosSelector);
+  const {current: currentTodos, finished: finishedTodos} = useSelector(todosSelector);
 
   console.log('currentTodos:', currentTodos);
   return (
     <main className={styles.container}>
       <AddTodoForm />
+      <TodosList title="Список дел" todos={currentTodos} />
+      <TodosList title="Завершено" todos={finishedTodos} />
     </main>
   );
 }

@@ -1,9 +1,11 @@
 :root {
-  --violet-light: #9e78cf;
+  --violet-light: rgba(158, 120, 207, 1);
   --violet: rgba(62, 22, 113, 1);
   --black: rgba(13, 7, 20, 1);
   --white: rgba(255, 255, 255, 1);
   --grey-light: rgba(119, 119, 119, 1);
+  --grey: rgba(21, 16, 28, 1);
+  --green: rgba(120, 207, 176, 1);
 }
 
 body {
@@ -11,6 +13,7 @@ body {
   font-family: 'Play', sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 16px;
   background: var(--black);
   color: var(--white);
 }
