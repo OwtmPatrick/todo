@@ -22,7 +22,7 @@ export const TodosList: FC<TodosList> = ({title, todos}) => {
 
       <ul className={styles.list}>
         {todos.map(todo => (
-          <Todo {...todo} />
+          <Todo key={todo.id} {...todo} />
         ))}
       </ul>
     </div>

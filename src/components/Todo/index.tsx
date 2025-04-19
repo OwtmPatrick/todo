@@ -1,14 +1,14 @@
 import {FC} from 'react';
-// import {useDispatch} from 'react-redux';
-// import {addTodo} from '../../store/todos';
+import {useDispatch} from 'react-redux';
+import {finishTodo, unFinishTodo, removeTodo} from '../../store/todos';
 import trashIcon from '../../assets/trash.svg';
 import {Todo as TodoType} from '../../types';
 import styles from './styles.module.css';
 
 export const Todo: FC<TodoType> = ({id, title, completed}) => {
-  const onChange = () => {
-    console.log('id', id);
-  };
+  const dispatch = useDispatch();
+  const onChange = () => dispatch(completed ? unFinishTodo(id) : finishTodo(id));
+  const onRemove = () => dispatch(removeTodo(id));
 
   return (
     <li className={styles.container}>
@@ -25,7 +25,7 @@ export const Todo: FC<TodoType> = ({id, title, completed}) => {
         </div>
       </label>
 
-      <button type="button" className={styles.btn}>
+      <button type="button" className={styles.btn} onClick={onRemove}>
         <img src={trashIcon} alt="trash icon" />
       </button>
     </li>
