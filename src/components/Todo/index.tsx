@@ -38,7 +38,7 @@ export const Todo: FC<TodoType> = ({id, title, completed}) => {
         <Modal
           title="Удаление TODO"
           onClose={toggleModal}
-          text={`Вы дествительно хоите удалить ${title}`}
+          text={`Вы дествительно хоите удалить ${title}?`}
           onConfirm={onRemove}
           onCancel={toggleModal}
         />
